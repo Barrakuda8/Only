@@ -1,0 +1,33 @@
+@use '../../../styles/mixins.scss' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.swiperWrapper {
+
+    @include pagePadding;
+
+    & {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 66px;
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        pointer-events: all;
+    }
+
+    @media screen and (width <= 768px) {
+        border-top: 1px solid #C7CDD9;
+        padding-top: 20px;
+        gap: 25px;
+    }
+
+    :global {
+        .swiper-scrollbar {
+            display: none !important;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@mixin container {
+    max-width: 1440px;
+    margin: 0 auto;
+    min-height: 100dvh;
+}
+
+@mixin pagePadding {
+    padding: 0 80px;
+
+    @media screen and (width <= 768px) {
+        padding: 0 20px;
+    }
+}
+
+@mixin PTSans {
+    & {
+        font-family: 'PT Sans', sans-serif;
+    }
+}
+
+@mixin bedasNeue {
+    & {
+        font-family: 'Bedas Neue', sans-serif;
+    }
+}

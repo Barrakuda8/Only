@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "baseUrl": "src",
+    "paths": {
+      "@media/*": ["media/*"],
+      "@components/*": ["components/*"], 
+      "@json/*": ["json/*"], 
+    },
+    "resolveJsonModule": true
+  },
+  "include": ["src"]
+}

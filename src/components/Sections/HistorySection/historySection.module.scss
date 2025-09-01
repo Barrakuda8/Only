@@ -1,0 +1,209 @@
+@use '../../../styles/mixins.scss' as *;
+@use '../../../styles/variables.scss' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $backgroundColor;
+}
+
+.sectionWrapper {
+    @include container;
+
+    & {
+        display: flex;
+        align-items: center;
+        border-left: $lightBorder;
+        border-right: $lightBorder;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 66px;
+        box-sizing: border-box;
+        position: relative;
+        max-width: 100%;
+
+        @media screen and (width <= 768px) {
+            padding-top: 59px;
+            padding-bottom: 78px;
+        }
+
+        .heading {
+            @include pagePadding;
+            @include PTSans;
+
+            & {
+                border-image: linear-gradient(to bottom, $firstHighlightColor 0%, $secondHighlightColor 100%);
+                border-width: 5px;
+                border-image-slice: 1;
+                border-style: solid;
+                border-top: none;
+                border-bottom: none;
+                border-right: none;
+                font-size: 56px;
+                font-weight: bold;
+                line-height: 120%;
+                color: $textColor;
+                height: fit-content
+            }
+
+            @media screen and (width <= 768px) {
+                border: none;
+                font-size: 20px;
+            }
+        }
+
+        .sliderWrapper {
+
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 96px;
+            padding-bottom: 281px;
+
+            @media screen and (width <= 768px) {
+                padding: 56px 0;
+            }
+
+            .sliderDate {
+                
+                @include pagePadding;
+                @include PTSans;
+
+                & {
+                    font-size: 200px;
+                    font-weight: bold;
+                    line-height: 160px;
+                    letter-spacing: -4px;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                @media screen and (width <= 768px) {
+                    font-size: 56px;
+                    line-height: 56px;
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+
+            .sliderStartDate {
+                color: #5D5FEF;
+            }
+
+            .sliderEndDate {
+                color: $secondHighlightColor;
+                margin-right: 33px; // для соответствия макету
+
+                @media screen and (width <= 768px) {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .swiperWrapper {
+            width: 100%;
+            pointer-events: none;
+        }
+        
+        .horizontalBackgroundLine {
+            border-bottom: $lightBorder;
+            width: 100%;
+            position: absolute;
+            top: 376px;
+            left: 0;
+            transform: translateY(-50%);
+            z-index: 0;
+
+            @media screen and (width <= 768px) {
+                display: none;
+            }
+        }
+
+        .backgroundCircleWrapper {
+            width: 530px;
+            height: 530px;
+            position: absolute;
+            top: 376px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(66, 86, 122, 0.2);
+            border-radius: 100%;
+            box-sizing: border-box;
+
+            @media screen and (width <= 768px) {
+                top: auto;
+                bottom: 13px;
+                border: none;
+                width: auto;
+                height: auto;
+            }
+
+            .backgroundCircle {
+                width: 100%;
+                height: 100%;
+                position: relative;
+
+                @media screen and (width <= 768px) {
+                    display: flex;
+                    gap: 10px;
+                }
+            }
+        }
+
+        .arrowsWrapper {
+
+            @include pagePadding;
+            @include PTSans;
+
+            & {
+                position: absolute;
+                top: 593px;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            @media screen and (width <= 768px) {
+                top: auto;
+                bottom: 13px;
+                gap: 10px;
+            }
+
+            .orderWrapper {
+                font-size: 14px;
+                color: $textColor;
+            }
+
+            .arrows {
+                display: flex;
+                gap: 20px;
+
+                @media screen and (width <= 768px) {
+                    gap: 8px;
+                }
+            }
+        }
+    }
+
+    .verticalBackgroundLine {
+        border-left: $lightBorder;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 0;
+
+        @media screen and (width <= 768px) {
+            display: none;
+        }
+    }
+}

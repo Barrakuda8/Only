@@ -1,0 +1,88 @@
+@use '../../../styles/mixins.scss' as *;
+@use '../../../styles/variables.scss' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.dotWrapper {
+    transform: translate(-50%, -50%);
+    position: absolute;
+
+    @media screen and (width <= 768px) {
+        position: static;
+        transform: none !important;
+    }
+
+    .dot {
+        width: 56px;
+        height: 56px;
+        background-color: $textColor;
+        border: 1px solid $textColor;
+        box-sizing: border-box;
+        border-radius: 100%;
+        transform: scale(0.1);
+        cursor: pointer;
+        font-size: 20px;
+        color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 1s all ease;
+        position: relative;
+
+        @media screen and (width <= 768px) {
+            position: static;
+            width: 6px;
+            height: 6px;
+            transform: scale(1);
+            border-color: rgba(48, 62, 88, 0.5);
+            background-color: $backgroundColor;
+        }
+
+        .name {
+            @include PTSans;
+
+            & {
+                line-height: 30px;
+                position: absolute;
+                left: 100%;
+                margin-left: 20px;
+                top: 50%;
+                letter-spacing: 0;
+                transform: translateY(-50%);
+                color: transparent;
+                transition: 0.2s all ease;
+            }
+
+            @media screen and (width <= 768px) {
+                display: none;
+            }
+        }
+    }
+
+    .dot:hover, &.activeDot .dot {
+        background-color: $backgroundColor;
+        border-color: rgba(48, 62, 88, 0.5);
+        color: $textColor;
+        transform: scale(1);
+
+        @media screen and (width <= 768px) {
+            color: transparent;
+            background-color: $textColor;
+        }
+
+        .name {
+            color: $textColor;
+        }
+    }
+
+    &.activeDot .dot {
+        transition: 0s all;
+
+        .name {
+            transition-delay: 0.8s;
+        }
+    }
+}

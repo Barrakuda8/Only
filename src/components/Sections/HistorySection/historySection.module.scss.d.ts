@@ -1,0 +1,15 @@
+export declare const arrows: string;
+export declare const arrowsWrapper: string;
+export declare const backgroundCircle: string;
+export declare const backgroundCircleWrapper: string;
+export declare const heading: string;
+export declare const horizontalBackgroundLine: string;
+export declare const orderWrapper: string;
+export declare const section: string;
+export declare const sectionWrapper: string;
+export declare const sliderDate: string;
+export declare const sliderEndDate: string;
+export declare const sliderStartDate: string;
+export declare const sliderWrapper: string;
+export declare const swiperWrapper: string;
+export declare const verticalBackgroundLine: string;
