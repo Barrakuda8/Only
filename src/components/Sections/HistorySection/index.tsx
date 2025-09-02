@@ -36,8 +36,8 @@ const HistorySection = ({}) => {
     let coords: [number, number][] = [];
     for(let i = 0; i < totalOrder; i++) {
         const angle: number = startingPointAngle + 2 * Math.PI * i / totalOrder;
-        const x: number = radius * Math.cos(angle);
-        const y: number = radius * Math.sin(angle);
+        const x: number = radius * Math.cos(angle) + 1;
+        const y: number = radius * Math.sin(angle) + 1;
         coords.push([x, y]);
         boxRefs.push(useRef<HTMLDivElement>(null));
     }
