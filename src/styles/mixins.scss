@@ -5,7 +5,9 @@
 }
 
 @mixin pagePadding {
-    padding: 0 80px;
+    & {
+        padding: 0 80px;
+    }
 
     @media screen and (width <= 768px) {
         padding: 0 20px;

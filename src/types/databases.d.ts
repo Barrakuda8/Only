@@ -5,8 +5,8 @@ interface EventStructure {
 
 interface MyJsonStructure {
   name: string;
-  startDate: string;
-  endDateL: string,
+  startDate: number;
+  endDate: number,
   events: EventStructure[];
 }
 

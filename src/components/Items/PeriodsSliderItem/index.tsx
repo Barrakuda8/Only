@@ -8,7 +8,7 @@ type Props = {
     i: number,
     name: string,
     ref: React.RefObject<HTMLDivElement | null>,
-    swiperRef: React.RefObject<any>
+    onClick?: React.MouseEventHandler<HTMLDivElement>
 }
 
 const PeriodsSliderItem = ({
@@ -17,7 +17,7 @@ const PeriodsSliderItem = ({
     i,
     name,
     ref,
-    swiperRef
+    onClick
 }: Props) => {
 
     return (
@@ -28,7 +28,7 @@ const PeriodsSliderItem = ({
         >
             <div 
                 className={styles.dot}
-                onClick={() => swiperRef?.current.slideTo(i)}
+                onClick={onClick}
             >
                 {i + 1}
                 <div className={styles.name}>{name}</div>

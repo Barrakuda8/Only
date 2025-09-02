@@ -1,33 +1,82 @@
 @use '../../../styles/mixins.scss' as *;
+@use '../../../styles/variables.scss' as *;
 
 * {
     margin: 0;
     padding: 0;
 }
 
-.swiperWrapper {
-
-    @include pagePadding;
-
-    & {
-        width: 100%;
-        box-sizing: border-box;
-        margin-bottom: 66px;
-        display: flex;
-        align-items: center;
-        gap: 80px;
-        pointer-events: all;
-    }
+.slider {
+    width: 100%;
+    opacity: 0;
 
     @media screen and (width <= 768px) {
-        border-top: 1px solid #C7CDD9;
-        padding-top: 20px;
-        gap: 25px;
+        height: calc(100dvh - 328px);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    :global {
-        .swiper-scrollbar {
-            display: none !important;
+    .swiperWrapper {
+        @include pagePadding;
+
+        & {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 66px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            cursor: pointer;
+        }
+
+        &:active {
+            cursor: grab;
+        }
+
+        @media screen and (width <= 768px) {
+            gap: unset;
+            margin-bottom: 0;
+            padding: 0;
+        }
+
+        :global {
+            .swiper-scrollbar {
+                display: none !important;
+            }
+
+            .swiper-wrapper {
+                transition-timing-function: cubic-bezier(0.22, 0.9, 0.33, 1) !important;
+                transition-duration: 800ms !important; /* если нужно жестко перезаписать */
+            }
+        }
+    }
+
+    .name {
+        @include PTSans;
+        @include pagePadding;
+
+        &{ 
+            display: none;
+            font-weight: bold;
+            font-size: 16px;
+            color: $textColor;
+        }
+        
+        @media screen and (width <= 768px) {
+            display: flex;
+        }
+    }
+
+    .mobileLine {
+        display: none;
+        border-bottom: 1px solid #C7CDD9;
+        width: calc(100% - 40px);
+        margin: 30px 20px 20px;
+
+        @media screen and (width <= 768px) {
+            display: flex;
         }
     }
 }

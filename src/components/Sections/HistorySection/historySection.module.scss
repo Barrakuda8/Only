@@ -30,8 +30,7 @@ body {
         max-width: 100%;
 
         @media screen and (width <= 768px) {
-            padding-top: 59px;
-            padding-bottom: 78px;
+            padding: 59px 0 79px;
         }
 
         .heading {
@@ -60,7 +59,6 @@ body {
         }
 
         .sliderWrapper {
-
             display: flex;
             align-items: center;
             position: relative;
@@ -68,11 +66,10 @@ body {
             padding-bottom: 281px;
 
             @media screen and (width <= 768px) {
-                padding: 56px 0;
+                padding: 56px 0 20px;
             }
 
             .sliderDate {
-                
                 @include pagePadding;
                 @include PTSans;
 
@@ -109,7 +106,6 @@ body {
 
         .swiperWrapper {
             width: 100%;
-            pointer-events: none;
         }
         
         .horizontalBackgroundLine {
@@ -158,7 +154,6 @@ body {
         }
 
         .arrowsWrapper {
-
             @include pagePadding;
             @include PTSans;
 
